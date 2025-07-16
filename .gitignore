@@ -72,6 +72,9 @@ coverage/
 .cache
 .parcel-cache
 
+# Vite
+.vite
+
 # next.js build output
 .next
 
@@ -96,18 +99,18 @@ coverage/
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# Jekyll (keeping for now in case of migration artifacts)
+# Legacy Jekyll files (can be removed after full migration)
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
+Gemfile.lock
 
 # Temporary files
 *.tmp
 *.temp
 
-# Package manager lockfiles (choose one)
-# package-lock.json
+# Keep package-lock.json for consistent installs
 # yarn.lock
 # pnpm-lock.yaml

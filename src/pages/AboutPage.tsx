@@ -63,7 +63,7 @@ export const AboutPage: React.FC = () => {
             If you notice any errors or have suggestions for improvement, feel free to:
           </p>
           <ul className="mb-6 space-y-2">
-            <li>Open an issue on <a href="https://github.com/ramizkhan/TIL" className="text-blue-600 hover:text-blue-500 dark:text-blue-400">GitHub</a></li>
+            <li>Open an issue on <a href="https://github.com/ramiboss/TIL" className="text-blue-600 hover:text-blue-500 dark:text-blue-400">GitHub</a></li>
             <li>Submit a pull request</li>
             <li>Reach out to me directly</li>
           </ul>

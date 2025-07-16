@@ -2,14 +2,14 @@
 
 > A modern React-based blog for documenting daily learnings and discoveries
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-green)](https://ramizkhan.github.io/TIL)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-green)](https://ramiboss.github.io/TIL)
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.x-yellow)](https://vitejs.dev/)
 
 ## 🌐 Live Demo
 
-Visit the live site: **[https://ramizkhan.github.io/TIL](https://ramizkhan.github.io/TIL)**
+Visit the live site: **[https://ramiboss.github.io/TIL](https://ramiboss.github.io/TIL)**
 
 ## ✨ Features
 
@@ -44,7 +44,7 @@ Visit the live site: **[https://ramizkhan.github.io/TIL](https://ramizkhan.githu
 
 ```bash
 # Clone the repository
-git clone https://github.com/ramizkhan/TIL.git
+git clone https://github.com/ramiboss/TIL.git
 cd TIL/package
 
 # Install dependencies

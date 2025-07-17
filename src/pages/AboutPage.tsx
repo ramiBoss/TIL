@@ -24,9 +24,9 @@ export const AboutPage: React.FC = () => {
             What is this?
           </h2>
           <p className="mb-6 text-gray-600 dark:text-gray-300">
-            This is my personal collection of <strong>Today I Learned</strong> (TIL) notes. 
-            These are short, concise write-ups about small things I learn day to day across 
-            various programming languages, technologies, and tools.
+            This is my personal collection of <strong>Today I Learned</strong> (TIL) notes. These
+            are short, concise write-ups about small things I learn day to day across various
+            programming languages, technologies, and tools.
           </p>
 
           <h2 className="mb-4 flex items-center text-2xl font-semibold">
@@ -34,10 +34,20 @@ export const AboutPage: React.FC = () => {
             Why TILs?
           </h2>
           <ul className="mb-6 space-y-2">
-            <li><strong>Knowledge Retention</strong>: Writing things down helps me remember them better</li>
-            <li><strong>Quick Reference</strong>: Easy to search and find solutions to problems I've solved before</li>
-            <li><strong>Sharing Knowledge</strong>: Others might find these snippets useful too</li>
-            <li><strong>Growth Tracking</strong>: A record of continuous learning and improvement</li>
+            <li>
+              <strong>Knowledge Retention</strong>: Writing things down helps me remember them
+              better
+            </li>
+            <li>
+              <strong>Quick Reference</strong>: Easy to search and find solutions to problems I've
+              solved before
+            </li>
+            <li>
+              <strong>Sharing Knowledge</strong>: Others might find these snippets useful too
+            </li>
+            <li>
+              <strong>Growth Tracking</strong>: A record of continuous learning and improvement
+            </li>
           </ul>
 
           <h2 className="mb-4 text-2xl font-semibold">Topics Covered</h2>
@@ -63,15 +73,24 @@ export const AboutPage: React.FC = () => {
             If you notice any errors or have suggestions for improvement, feel free to:
           </p>
           <ul className="mb-6 space-y-2">
-            <li>Open an issue on <a href="https://github.com/ramiboss/TIL" className="text-blue-600 hover:text-blue-500 dark:text-blue-400">GitHub</a></li>
+            <li>
+              Open an issue on{' '}
+              <a
+                href="https://github.com/ramiboss/TIL"
+                className="text-blue-600 hover:text-blue-500 dark:text-blue-400"
+              >
+                GitHub
+              </a>
+            </li>
             <li>Submit a pull request</li>
             <li>Reach out to me directly</li>
           </ul>
 
           <h2 className="mb-4 text-2xl font-semibold">Inspiration</h2>
           <p className="text-gray-600 dark:text-gray-300">
-            This TIL collection is inspired by the many other developers who share their learning in public. 
-            Special thanks to the open source community for fostering a culture of knowledge sharing.
+            This TIL collection is inspired by the many other developers who share their learning in
+            public. Special thanks to the open source community for fostering a culture of knowledge
+            sharing.
           </p>
 
           <div className="mt-8 rounded-md bg-blue-50 p-4 dark:bg-blue-900/20">

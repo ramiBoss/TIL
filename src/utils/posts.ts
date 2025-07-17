@@ -9,7 +9,8 @@ const mockPosts: TILPost[] = [
     date: '2025-01-15',
     category: 'JavaScript',
     tags: ['javascript', 'arrays', 'functional-programming'],
-    description: 'Learn how to chain multiple array methods in JavaScript for more readable and functional code.',
+    description:
+      'Learn how to chain multiple array methods in JavaScript for more readable and functional code.',
     content: `# JavaScript Array Methods Chaining
 
 Today I learned that you can chain multiple array methods in JavaScript for more readable and functional code.
@@ -61,7 +62,7 @@ console.log(sortedActiveNames); // ['Alice', 'Charlie']
 - **Performance**: Each method creates a new array, so be mindful with large datasets
 - **Debugging**: Can be harder to debug in the middle of a chain
 - **Readability**: Don't chain too many methods - consider breaking into steps if it gets complex`,
-    readingTime: 3
+    readingTime: 3,
   },
   {
     slug: 'git-stash-with-message',
@@ -123,7 +124,7 @@ git stash push -m "Save changes to config file" config/database.yml
 \`\`\`
 
 This is super useful when you want to temporarily save changes to specific files while continuing to work on others.`,
-    readingTime: 2
+    readingTime: 2,
   },
   {
     slug: 'css-grid-auto-fit-vs-auto-fill',
@@ -131,7 +132,8 @@ This is super useful when you want to temporarily save changes to specific files
     date: '2025-01-08',
     category: 'CSS',
     tags: ['css', 'grid', 'responsive-design'],
-    description: 'Understanding the difference between auto-fit and auto-fill in CSS Grid and when to use each.',
+    description:
+      'Understanding the difference between auto-fit and auto-fill in CSS Grid and when to use each.',
     content: `# CSS Grid Auto-Fit vs Auto-Fill
 
 Today I learned the difference between \`auto-fit\` and \`auto-fill\` in CSS Grid, and when to use each one.
@@ -198,8 +200,8 @@ Perfect for responsive card layouts:
 \`\`\`
 
 This creates a responsive grid where cards are at least 300px wide but grow to fill the available space.`,
-    readingTime: 3
-  }
+    readingTime: 3,
+  },
 ];
 
 export const calculateReadingTime = (content: string): number => {
@@ -211,7 +213,7 @@ export const calculateReadingTime = (content: string): number => {
 export const parseMarkdownPost = (filename: string, content: string): TILPost => {
   const { data, content: markdownContent } = matter(content);
   const frontMatter = data as TILFrontMatter;
-  
+
   return {
     slug: filename.replace('.md', ''),
     title: frontMatter.title,
@@ -232,39 +234,40 @@ export const getAllPosts = async (): Promise<TILPost[]> => {
 
 export const getPostBySlug = async (slug: string): Promise<TILPost | null> => {
   const posts = await getAllPosts();
-  return posts.find(post => post.slug === slug) || null;
+  return posts.find((post) => post.slug === slug) || null;
 };
 
 export const getPostsByCategory = async (category: string): Promise<TILPost[]> => {
   const posts = await getAllPosts();
-  return posts.filter(post => post.category.toLowerCase() === category.toLowerCase());
+  return posts.filter((post) => post.category.toLowerCase() === category.toLowerCase());
 };
 
 export const getPostsByTag = async (tag: string): Promise<TILPost[]> => {
   const posts = await getAllPosts();
-  return posts.filter(post => post.tags.some(t => t.toLowerCase() === tag.toLowerCase()));
+  return posts.filter((post) => post.tags.some((t) => t.toLowerCase() === tag.toLowerCase()));
 };
 
 export const searchPosts = async (query: string): Promise<TILPost[]> => {
   const posts = await getAllPosts();
   const searchTerm = query.toLowerCase();
-  
-  return posts.filter(post => 
-    post.title.toLowerCase().includes(searchTerm) ||
-    post.description.toLowerCase().includes(searchTerm) ||
-    post.content.toLowerCase().includes(searchTerm) ||
-    post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+
+  return posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchTerm) ||
+      post.description.toLowerCase().includes(searchTerm) ||
+      post.content.toLowerCase().includes(searchTerm) ||
+      post.tags.some((tag) => tag.toLowerCase().includes(searchTerm))
   );
 };
 
 export const getAllCategories = async (): Promise<string[]> => {
   const posts = await getAllPosts();
-  const categories = posts.map(post => post.category);
+  const categories = posts.map((post) => post.category);
   return [...new Set(categories)].sort();
 };
 
 export const getAllTags = async (): Promise<string[]> => {
   const posts = await getAllPosts();
-  const tags = posts.flatMap(post => post.tags);
+  const tags = posts.flatMap((post) => post.tags);
   return [...new Set(tags)].sort();
 };

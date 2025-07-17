@@ -14,10 +14,7 @@ export const HomePage: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [allPosts, allCategories] = await Promise.all([
-          getAllPosts(),
-          getAllCategories(),
-        ]);
+        const [allPosts, allCategories] = await Promise.all([getAllPosts(), getAllCategories()]);
         setPosts(allPosts);
         setFilteredPosts(allPosts);
         setCategories(['All', ...allCategories]);
@@ -35,7 +32,7 @@ export const HomePage: React.FC = () => {
     if (selectedCategory === 'All') {
       setFilteredPosts(posts);
     } else {
-      setFilteredPosts(posts.filter(post => post.category === selectedCategory));
+      setFilteredPosts(posts.filter((post) => post.category === selectedCategory));
     }
   }, [posts, selectedCategory]);
 
@@ -61,7 +58,8 @@ export const HomePage: React.FC = () => {
           Today I Learned
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-          A collection of concise write-ups on small things I learn day to day across a variety of languages and technologies.
+          A collection of concise write-ups on small things I learn day to day across a variety of
+          languages and technologies.
         </p>
         <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
           <strong>{posts.length}</strong> TILs and counting...
@@ -95,14 +93,11 @@ export const HomePage: React.FC = () => {
       {filteredPosts.length === 0 ? (
         <div className="py-12 text-center">
           <BookOpen className="mx-auto h-12 w-12 text-gray-300 dark:text-gray-600" />
-          <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">
-            No TILs found
-          </h3>
+          <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">No TILs found</h3>
           <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-            {selectedCategory === 'All' 
-              ? "Check back soon for new learnings."
-              : `No TILs found in the "${selectedCategory}" category.`
-            }
+            {selectedCategory === 'All'
+              ? 'Check back soon for new learnings.'
+              : `No TILs found in the "${selectedCategory}" category.`}
           </p>
         </div>
       ) : (

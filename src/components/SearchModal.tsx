@@ -68,10 +68,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex min-h-full items-start justify-center p-4 pt-16">
-        <div
-          className="fixed inset-0 bg-black bg-opacity-25"
-          onClick={onClose}
-        />
+        <div className="fixed inset-0 bg-black bg-opacity-25" onClick={onClose} />
         <div className="relative w-full max-w-2xl rounded-lg bg-white shadow-xl dark:bg-gray-800">
           {/* Search Input */}
           <div className="flex items-center border-b border-gray-200 px-4 py-3 dark:border-gray-700">

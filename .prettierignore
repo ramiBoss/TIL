@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Production builds
+dist/
+build/
+out/
+
+# Logs
+*.log
+
+# Environment files
+.env*
+
+# Cache directories
+.cache/
+.parcel-cache/
+.vite/
+
+# Coverage
+coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Legacy files
+_site/
+.jekyll-cache/
+vendor/
+
+# Generated files
+*.min.js
+*.min.css

@@ -18,10 +18,10 @@ export const CategoriesPage: React.FC = () => {
     const loadCategories = async () => {
       try {
         const posts = await getAllPosts();
-        
+
         // Group posts by category
         const categoryMap = new Map<string, TILPost[]>();
-        posts.forEach(post => {
+        posts.forEach((post) => {
           const category = post.category;
           if (!categoryMap.has(category)) {
             categoryMap.set(category, []);
@@ -67,9 +67,7 @@ export const CategoriesPage: React.FC = () => {
         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
           <Folder className="h-8 w-8 text-blue-600 dark:text-blue-400" />
         </div>
-        <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-          Categories
-        </h1>
+        <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Categories</h1>
         <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
           Browse TILs organized by technology and topic
         </p>
@@ -128,9 +126,7 @@ export const CategoriesPage: React.FC = () => {
                       </p>
                       <div className="mt-2 flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400">
                         <span>{new Date(post.date).toLocaleDateString()}</span>
-                        {post.readingTime && (
-                          <span>{post.readingTime} min read</span>
-                        )}
+                        {post.readingTime && <span>{post.readingTime} min read</span>}
                       </div>
                     </div>
                   </Link>

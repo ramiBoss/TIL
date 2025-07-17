@@ -5,6 +5,7 @@
 This is a React + TypeScript + Vite project for a TIL (Today I Learned) blog. The project includes:
 
 ## Technology Stack
+
 - React 18 with TypeScript
 - Vite for build tooling
 - React Router for navigation
@@ -14,6 +15,7 @@ This is a React + TypeScript + Vite project for a TIL (Today I Learned) blog. Th
 - CSS3 with modern features
 
 ## Project Structure
+
 - `src/components/` - Reusable React components
 - `src/pages/` - Page components
 - `src/types/` - TypeScript type definitions
@@ -22,6 +24,7 @@ This is a React + TypeScript + Vite project for a TIL (Today I Learned) blog. Th
 - `src/data/` - Static data and post metadata
 
 ## Coding Standards
+
 - Use TypeScript for all new files
 - Follow React functional components with hooks
 - Use CSS modules or styled components for styling
@@ -31,7 +34,9 @@ This is a React + TypeScript + Vite project for a TIL (Today I Learned) blog. Th
 - Implement proper error handling
 
 ## TIL Post Format
+
 TIL posts should be markdown files with frontmatter containing:
+
 - title: string
 - date: YYYY-MM-DD
 - category: string
@@ -39,6 +44,7 @@ TIL posts should be markdown files with frontmatter containing:
 - description: string
 
 ## Features to Implement
+
 - Homepage with TIL listing
 - Category filtering
 - Search functionality

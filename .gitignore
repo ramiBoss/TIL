@@ -4,25 +4,52 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+.pnpm-store/
+bower_components/
 
-# Production builds
+# Package manager files
+# Uncomment if you want to ignore lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+.npm
+.yarn-integrity
+
+# Environment variables
+.env*
+!.env.example
+
+# Build outputs
 dist/
 build/
 out/
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+*.tsbuildinfo
 
 # IDE and editor files
-.vscode/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
 .idea/
 *.swp
 *.swo
 *~
+.project
+.classpath
+*.sublime-*
+
+# Testing and coverage
+coverage/
+*.lcov
+.nyc_output/
+.jest/
+junit.xml
+
+# Logs and debugging
+logs/
+*.log
+debug/
+.debug/
 
 # OS generated files
 .DS_Store
@@ -33,73 +60,31 @@ out/
 ehthumbs.db
 Thumbs.db
 
-# Logs
-logs
-*.log
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage directory used by tools like istanbul
-coverage/
-*.lcov
-
-# nyc test coverage
-.nyc_output
-
-# ESLint cache
+# Cache directories
+.cache/
+.parcel-cache/
 .eslintcache
-
-# Microbundle cache
+.stylelintcache
 .rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Yarn Integrity file
-.yarn-integrity
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
-
-# Vite
-.vite
-
-# next.js build output
-.next
-
-# nuxt.js build output
-.nuxt
-
-# vuepress build output
-.vuepress/dist
-
-# Serverless directories
-.serverless
-
-# FuseBox cache
+.rts2_cache*/
+.webpack/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
 .fusebox/
-
-# DynamoDB Local files
 .dynamodb/
-
-# TernJS port file
 .tern-port
+.vite/
 
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
+# Temporary files
+*.tmp
+*.temp
+*.bak
+.temp/
+.tmp/
 
-# Legacy Jekyll files (can be removed after full migration)
+# Legacy Jekyll files
 _site/
 .sass-cache/
 .jekyll-cache/
@@ -107,10 +92,5 @@ _site/
 vendor/
 Gemfile.lock
 
-# Temporary files
-*.tmp
-*.temp
-
-# Keep package-lock.json for consistent installs
-# yarn.lock
-# pnpm-lock.yaml
+# Local Netlify folder
+.netlify/

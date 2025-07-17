@@ -21,9 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ onSearchToggle }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <BookOpen className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
-              TIL
-            </span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">TIL</span>
           </Link>
 
           {/* Navigation */}
@@ -31,8 +29,8 @@ export const Header: React.FC<HeaderProps> = ({ onSearchToggle }) => {
             <Link
               to="/"
               className={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                isActive('/') 
-                  ? 'text-blue-600 dark:text-blue-400' 
+                isActive('/')
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300'
               }`}
             >
@@ -41,8 +39,8 @@ export const Header: React.FC<HeaderProps> = ({ onSearchToggle }) => {
             <Link
               to="/categories"
               className={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                isActive('/categories') 
-                  ? 'text-blue-600 dark:text-blue-400' 
+                isActive('/categories')
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300'
               }`}
             >
@@ -51,8 +49,8 @@ export const Header: React.FC<HeaderProps> = ({ onSearchToggle }) => {
             <Link
               to="/about"
               className={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                isActive('/about') 
-                  ? 'text-blue-600 dark:text-blue-400' 
+                isActive('/about')
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300'
               }`}
             >
@@ -74,11 +72,7 @@ export const Header: React.FC<HeaderProps> = ({ onSearchToggle }) => {
               className="rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
             >
-              {theme === 'light' ? (
-                <Moon className="h-5 w-5" />
-              ) : (
-                <Sun className="h-5 w-5" />
-              )}
+              {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
             </button>
           </div>
         </div>

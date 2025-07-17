@@ -74,10 +74,8 @@ export const TILDetailPage: React.FC = () => {
         <h1 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
           {post.title}
         </h1>
-        <p className="mb-6 text-lg text-gray-600 dark:text-gray-300">
-          {post.description}
-        </p>
-        
+        <p className="mb-6 text-lg text-gray-600 dark:text-gray-300">{post.description}</p>
+
         {/* Meta Information */}
         <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
           <div className="flex items-center">
@@ -103,9 +101,7 @@ export const TILDetailPage: React.FC = () => {
         <footer className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
           <div className="flex items-center space-x-2">
             <Tag className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Tags:
-            </span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Tags:</span>
           </div>
           <div className="mt-2 flex flex-wrap gap-2">
             {post.tags.map((tag) => (

@@ -43,12 +43,10 @@ export const TILCard: React.FC<TILCardProps> = ({ post }) => {
                 </span>
               ))}
               {post.tags.length > 3 && (
-                <span className="text-xs text-gray-400">
-                  +{post.tags.length - 3} more
-                </span>
+                <span className="text-xs text-gray-400">+{post.tags.length - 3} more</span>
               )}
             </div>
-            
+
             {post.readingTime && (
               <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
                 <Clock className="mr-1 h-3 w-3" />

@@ -18,7 +18,7 @@ function App() {
       <Router basename="/TIL">
         <div className="flex min-h-screen flex-col bg-gray-50 dark:bg-gray-900">
           <Header onSearchToggle={() => setIsSearchOpen(true)} />
-          
+
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -29,13 +29,10 @@ function App() {
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
-          
+
           <Footer />
-          
-          <SearchModal 
-            isOpen={isSearchOpen} 
-            onClose={() => setIsSearchOpen(false)} 
-          />
+
+          <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         </div>
       </Router>
     </ThemeProvider>

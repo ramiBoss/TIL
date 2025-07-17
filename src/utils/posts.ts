@@ -1,5 +1,6 @@
 import matter from 'gray-matter';
 import type { TILPost, TILFrontMatter } from '../types';
+import { practices } from '../posts/practices';
 
 // Mock data for demonstration - in a real app, you'd fetch from your posts
 const mockPosts: TILPost[] = [
@@ -229,7 +230,8 @@ export const parseMarkdownPost = (filename: string, content: string): TILPost =>
 export const getAllPosts = async (): Promise<TILPost[]> => {
   // In a real implementation, you would fetch markdown files from public/posts/
   // For now, we'll return mock data
-  return mockPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const allPosts = [...practices];
+  return allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };
 
 export const getPostBySlug = async (slug: string): Promise<TILPost | null> => {

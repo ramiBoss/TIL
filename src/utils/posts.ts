@@ -3,207 +3,208 @@ import type { TILPost, TILFrontMatter } from '../types';
 import { practices } from '../posts/practices';
 
 // Mock data for demonstration - in a real app, you'd fetch from your posts
-const mockPosts: TILPost[] = [
-  {
-    slug: 'javascript-array-chaining',
-    title: 'JavaScript Array Methods Chaining',
-    date: '2025-01-15',
-    category: 'JavaScript',
-    tags: ['javascript', 'arrays', 'functional-programming'],
-    description:
-      'Learn how to chain multiple array methods in JavaScript for more readable and functional code.',
-    content: `# JavaScript Array Methods Chaining
 
-Today I learned that you can chain multiple array methods in JavaScript for more readable and functional code.
+// const mockPosts: TILPost[] = [
+//   {
+//     slug: 'javascript-array-chaining',
+//     title: 'JavaScript Array Methods Chaining',
+//     date: '2025-01-15',
+//     category: 'JavaScript',
+//     tags: ['javascript', 'arrays', 'functional-programming'],
+//     description:
+//       'Learn how to chain multiple array methods in JavaScript for more readable and functional code.',
+//     content: `# JavaScript Array Methods Chaining
 
-## The Problem
+// Today I learned that you can chain multiple array methods in JavaScript for more readable and functional code.
 
-I had an array of users and needed to:
-1. Filter active users
-2. Map to get only names
-3. Sort alphabetically
+// ## The Problem
 
-## The Solution
+// I had an array of users and needed to:
+// 1. Filter active users
+// 2. Map to get only names
+// 3. Sort alphabetically
 
-Instead of using multiple variables:
+// ## The Solution
 
-\`\`\`javascript
-const users = [
-  { name: 'Alice', active: true },
-  { name: 'Bob', active: false },
-  { name: 'Charlie', active: true }
-];
+// Instead of using multiple variables:
 
-// Verbose approach
-const activeUsers = users.filter(user => user.active);
-const names = activeUsers.map(user => user.name);
-const sortedNames = names.sort();
-\`\`\`
+// \`\`\`javascript
+// const users = [
+//   { name: 'Alice', active: true },
+//   { name: 'Bob', active: false },
+//   { name: 'Charlie', active: true }
+// ];
 
-You can chain the methods:
+// // Verbose approach
+// const activeUsers = users.filter(user => user.active);
+// const names = activeUsers.map(user => user.name);
+// const sortedNames = names.sort();
+// \`\`\`
 
-\`\`\`javascript
-const sortedActiveNames = users
-  .filter(user => user.active)
-  .map(user => user.name)
-  .sort();
+// You can chain the methods:
 
-console.log(sortedActiveNames); // ['Alice', 'Charlie']
-\`\`\`
+// \`\`\`javascript
+// const sortedActiveNames = users
+//   .filter(user => user.active)
+//   .map(user => user.name)
+//   .sort();
 
-## Why This is Useful
+// console.log(sortedActiveNames); // ['Alice', 'Charlie']
+// \`\`\`
 
-- **Readability**: The intent is clear - filter, then map, then sort
-- **Immutability**: Each method returns a new array
-- **Functional style**: No intermediate variables needed
-- **Chainable**: Easy to add more transformations
+// ## Why This is Useful
 
-## Watch Out For
+// - **Readability**: The intent is clear - filter, then map, then sort
+// - **Immutability**: Each method returns a new array
+// - **Functional style**: No intermediate variables needed
+// - **Chainable**: Easy to add more transformations
 
-- **Performance**: Each method creates a new array, so be mindful with large datasets
-- **Debugging**: Can be harder to debug in the middle of a chain
-- **Readability**: Don't chain too many methods - consider breaking into steps if it gets complex`,
-    readingTime: 3,
-  },
-  {
-    slug: 'git-stash-with-message',
-    title: 'Git Stash with Message',
-    date: '2025-01-10',
-    category: 'Git',
-    tags: ['git', 'version-control', 'workflow'],
-    description: 'Add descriptive messages to git stash to make it easier to identify later.',
-    content: `# Git Stash with Message
+// ## Watch Out For
 
-Today I learned that you can add a descriptive message to git stash to make it easier to identify later.
+// - **Performance**: Each method creates a new array, so be mindful with large datasets
+// - **Debugging**: Can be harder to debug in the middle of a chain
+// - **Readability**: Don't chain too many methods - consider breaking into steps if it gets complex`,
+//     readingTime: 3,
+//   },
+//   {
+//     slug: 'git-stash-with-message',
+//     title: 'Git Stash with Message',
+//     date: '2025-01-10',
+//     category: 'Git',
+//     tags: ['git', 'version-control', 'workflow'],
+//     description: 'Add descriptive messages to git stash to make it easier to identify later.',
+//     content: `# Git Stash with Message
 
-## The Basic Way
+// Today I learned that you can add a descriptive message to git stash to make it easier to identify later.
 
-Usually, I just use:
+// ## The Basic Way
 
-\`\`\`bash
-git stash
-\`\`\`
+// Usually, I just use:
 
-This creates a stash with a generic message like "WIP on main: 1234567 Last commit message".
+// \`\`\`bash
+// git stash
+// \`\`\`
 
-## The Better Way
+// This creates a stash with a generic message like "WIP on main: 1234567 Last commit message".
 
-You can add a custom message:
+// ## The Better Way
 
-\`\`\`bash
-git stash push -m "Fix: working on user authentication bug"
-\`\`\`
+// You can add a custom message:
 
-## Why This Matters
+// \`\`\`bash
+// git stash push -m "Fix: working on user authentication bug"
+// \`\`\`
 
-When you have multiple stashes, it's much easier to identify them:
+// ## Why This Matters
 
-\`\`\`bash
-git stash list
-\`\`\`
+// When you have multiple stashes, it's much easier to identify them:
 
-Output with messages:
-\`\`\`
-stash@{0}: On main: Fix: working on user authentication bug
-stash@{1}: On main: Feature: half-finished pagination component
-stash@{2}: On main: Refactor: cleaning up API calls
-\`\`\`
+// \`\`\`bash
+// git stash list
+// \`\`\`
 
-vs. without messages:
-\`\`\`
-stash@{0}: WIP on main: 1234567 Add user login endpoint
-stash@{1}: WIP on main: 2345678 Update README
-stash@{2}: WIP on main: 3456789 Fix typo in comments
-\`\`\`
+// Output with messages:
+// \`\`\`
+// stash@{0}: On main: Fix: working on user authentication bug
+// stash@{1}: On main: Feature: half-finished pagination component
+// stash@{2}: On main: Refactor: cleaning up API calls
+// \`\`\`
 
-## Bonus: Stash Specific Files
+// vs. without messages:
+// \`\`\`
+// stash@{0}: WIP on main: 1234567 Add user login endpoint
+// stash@{1}: WIP on main: 2345678 Update README
+// stash@{2}: WIP on main: 3456789 Fix typo in comments
+// \`\`\`
 
-You can also stash only specific files with a message:
+// ## Bonus: Stash Specific Files
 
-\`\`\`bash
-git stash push -m "Save changes to config file" config/database.yml
-\`\`\`
+// You can also stash only specific files with a message:
 
-This is super useful when you want to temporarily save changes to specific files while continuing to work on others.`,
-    readingTime: 2,
-  },
-  {
-    slug: 'css-grid-auto-fit-vs-auto-fill',
-    title: 'CSS Grid Auto-Fit vs Auto-Fill',
-    date: '2025-01-08',
-    category: 'CSS',
-    tags: ['css', 'grid', 'responsive-design'],
-    description:
-      'Understanding the difference between auto-fit and auto-fill in CSS Grid and when to use each.',
-    content: `# CSS Grid Auto-Fit vs Auto-Fill
+// \`\`\`bash
+// git stash push -m "Save changes to config file" config/database.yml
+// \`\`\`
 
-Today I learned the difference between \`auto-fit\` and \`auto-fill\` in CSS Grid, and when to use each one.
+// This is super useful when you want to temporarily save changes to specific files while continuing to work on others.`,
+//     readingTime: 2,
+//   },
+//   {
+//     slug: 'css-grid-auto-fit-vs-auto-fill',
+//     title: 'CSS Grid Auto-Fit vs Auto-Fill',
+//     date: '2025-01-08',
+//     category: 'CSS',
+//     tags: ['css', 'grid', 'responsive-design'],
+//     description:
+//       'Understanding the difference between auto-fit and auto-fill in CSS Grid and when to use each.',
+//     content: `# CSS Grid Auto-Fit vs Auto-Fill
 
-## The Setup
+// Today I learned the difference between \`auto-fit\` and \`auto-fill\` in CSS Grid, and when to use each one.
 
-Both are used with \`repeat()\` in CSS Grid:
+// ## The Setup
 
-\`\`\`css
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-\`\`\`
+// Both are used with \`repeat()\` in CSS Grid:
 
-## Auto-Fill
+// \`\`\`css
+// .container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+//   gap: 1rem;
+// }
+// \`\`\`
 
-\`auto-fill\` creates as many columns as will fit, even if they're empty:
+// ## Auto-Fill
 
-\`\`\`css
-.grid-auto-fill {
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-\`\`\`
+// \`auto-fill\` creates as many columns as will fit, even if they're empty:
 
-**Result**: If you have 3 items in a 1000px container, it creates 5 columns (1000px ÷ 200px), leaving 2 empty columns.
+// \`\`\`css
+// .grid-auto-fill {
+//   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+// }
+// \`\`\`
 
-## Auto-Fit
+// **Result**: If you have 3 items in a 1000px container, it creates 5 columns (1000px ÷ 200px), leaving 2 empty columns.
 
-\`auto-fit\` creates columns only for existing items and stretches them to fill the space:
+// ## Auto-Fit
 
-\`\`\`css
-.grid-auto-fit {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-\`\`\`
+// \`auto-fit\` creates columns only for existing items and stretches them to fill the space:
 
-**Result**: If you have 3 items in a 1000px container, it creates 3 columns and each item takes up ~333px.
+// \`\`\`css
+// .grid-auto-fit {
+//   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+// }
+// \`\`\`
 
-## Visual Comparison
+// **Result**: If you have 3 items in a 1000px container, it creates 3 columns and each item takes up ~333px.
 
-With 3 items in a wide container:
+// ## Visual Comparison
 
-**Auto-fill**: \`[item] [item] [item] [empty] [empty]\`  
-**Auto-fit**: \`[  item  ] [  item  ] [  item  ]\`
+// With 3 items in a wide container:
 
-## When to Use Which
+// **Auto-fill**: \`[item] [item] [item] [empty] [empty]\`
+// **Auto-fit**: \`[  item  ] [  item  ] [  item  ]\`
 
-- **Use auto-fill** when you want consistent sizing and don't mind empty space
-- **Use auto-fit** when you want items to grow and fill available space
+// ## When to Use Which
 
-## Real-World Example
+// - **Use auto-fill** when you want consistent sizing and don't mind empty space
+// - **Use auto-fit** when you want items to grow and fill available space
 
-Perfect for responsive card layouts:
+// ## Real-World Example
 
-\`\`\`css
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-\`\`\`
+// Perfect for responsive card layouts:
 
-This creates a responsive grid where cards are at least 300px wide but grow to fill the available space.`,
-    readingTime: 3,
-  },
-];
+// \`\`\`css
+// .card-grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//   gap: 2rem;
+//   padding: 2rem;
+// }
+// \`\`\`
+
+// This creates a responsive grid where cards are at least 300px wide but grow to fill the available space.`,
+//     readingTime: 3,
+//   },
+// ];
 
 export const calculateReadingTime = (content: string): number => {
   const wordsPerMinute = 200;
